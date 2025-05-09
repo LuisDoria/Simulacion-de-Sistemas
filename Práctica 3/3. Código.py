@@ -1,5 +1,3 @@
-#Código en Python.
-
 import random
 import math
 
