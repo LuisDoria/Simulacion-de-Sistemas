@@ -1,0 +1,7 @@
+Actividad 1:
+1. ¿Cuántas observaciones se rechazan para generar las N observaciones? R/ Dado que se iban almacenando las observaciones rechazadas en una lista "rechazados", la cantidad de observaciones rechazadas es len(rechazados), por lo visto siempre se rechazan más de lo que se acepta. Para hacer 500000 observaciones, por ejemplo, se rechazaron en promedio 556730; en promedio se rechazan 1.11346 observaciones por cada observación aceptada.
+
+Actividad 2:
+1. También con 500000 duplas (r1, r2) evaluadas, con una confianza del 95%, el valor de la integral definida $\sen ^2(\pi x)$ de 0 a 1 se encuentra en [0.49955, 0.502318]. Finalmente, el método de integración con Montecarlo da aproximadamente el mismo valor que el evaluado con la librería Sympy, con un valor de 0.5.
+
+Ambas: en los subplots se puede observar que las observaciones lograron ajustar adecuadamente a las funciones correspondientes.

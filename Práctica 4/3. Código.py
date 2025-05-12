@@ -9,6 +9,7 @@ import sympy
 def Acept_Recha(N): #dadas N observaciones requeridas
     rechazados = []
     aceptados = []
+    rech = 0
     while len(aceptados)<N:
         r1 = random.random() #Se genera un par de números, uno pa evaluar y otro pa comparar.
         r2 = random.random()
@@ -21,10 +22,10 @@ def Acept_Recha(N): #dadas N observaciones requeridas
     return rechazados, aceptados
 
 N = int(input("Ingrese el número de observaciones: "))
-rech, acept = Acept_Recha(N)
+rech, acept= Acept_Recha(N)
 print("---------------------------------------------------------------------------------------------")
 print('**Actividad 1:**')
-print(f'Requeridas {N} observaciones, en el proceso se rechazan en promedio {len(rech)/len(acept)}')
+print(f'Requeridas {N} observaciones, se rechazaron {len(rech)}, en el proceso se rechazan en promedio {len(rech)/N}')
 print("---------------------------------------------------------------------------------------------")
 
 #Hacer un histograma con la cantidad de valores aceptados y comparar con la función
@@ -84,6 +85,7 @@ acepX, rechX, acepY, rechY, theta, inf, sup = integral_montecarlo(N_i,0,1,1)
 fig, ax = plt.subplots(1,2, figsize=(10, 3))
 ax[0].scatter(acepX, acepY, color='blue', s=1, label='Aceptados')
 ax[0].scatter(rechX, rechY, color='lightcoral', s=1, label='Rechazados')
+ax[0].set_title('Diagrama de dispersión')
 ax[0].set_xlabel('r1')
 ax[0].set_ylabel('r2')
 ax[0].legend()
@@ -103,7 +105,7 @@ f_sym = sympy.sin(sympy.pi * x)**2
 integral_sym = float(sympy.integrate(f_sym, (x, 0, 1)))
 
 print("")
-print('El valor de la integral sería según el método: ')
+print('El valor de la integral según cada método sería:\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓')
 print('Método           Valor')
 print("---------------------")
 print(f'Montecarlo       {theta:.2f} ')
